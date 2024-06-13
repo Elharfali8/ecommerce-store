@@ -1,14 +1,15 @@
 import logo from '../assets/main-logo.png'
 import { Link, NavLink } from 'react-router-dom'
 import { navLinks } from '../utils/data'
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaBars, FaTimes } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 
-const Navbar = () => {
+const Navbar = ({ isOpen, handleNav, setIsOpen }) => {
+    
   return (
-      <nav className='h-20 bg-white relative w-full'>
+      <nav className=' top-0 h-20 bg-white relative w-full'>
           <div className="container mx-auto h-full flex items-center justify-between px-4 lg:px-2 xl:px-1">
-              <Link to='/'>
+              <Link to='/' onClick={() => setIsOpen(false)}>
                   <img src={logo} alt="main-logo" className='w-[110px]' />
               </Link>
               <ul className='hidden lg:flex items-center gap-x-1'>
@@ -33,6 +34,17 @@ const Navbar = () => {
                   <button type="button">
                       <FaShoppingCart size={28} />
                   </button>
+              </div>
+              <div className='lg:hidden flex items-center justify-center'>
+                  {isOpen ? (
+                      <button type="button" onClick={handleNav}>
+                          <FaTimes size={28} />
+                    </button>
+                  ) : (
+                    <button type="button" onClick={handleNav}>
+                        <FaBars size={28} />
+                    </button>
+                  )}
               </div>
           </div>
     </nav>

@@ -46,12 +46,17 @@ body {
   color: #000000;
 }
 
+.text-color {
+  color: #262626;
+}
+
 .black-bg-color {
   background-color: #000000;
 }
 
 .active {
   background-color: #F2F0F1;
+  color: #000000;
 }
 
 .hero-bg {
@@ -59,4 +64,8 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.text-sh {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
